@@ -20,9 +20,9 @@
       <input id="bookname" type="text" />
       <input type="submit" value="submit" />
     </form>
-    <h1>Create videos</h1>
-    <form onsubmit="return API.saveVideo()">
-      <input id="videoname" type="text" />
+    <h1>Create images</h1>
+    <form onsubmit="return API.saveImage()">
+      <input id="imagename" type="text" />
       <input type="submit" value="submit" />
     </form>
     <h1>Search</h1>
@@ -55,8 +55,8 @@
           });
         };
 
-        const postVideoName = makePostNameFunc(
-          "http://localhost:8080/api/v1/videos"
+        const postImageName = makePostNameFunc(
+          "http://localhost:8080/api/v1/images"
         );
         const postBookName = makePostNameFunc(
           "http://localhost:8080/api/v1/books"
@@ -87,7 +87,7 @@
         };
 
         return {
-          saveVideo: makeSaveFunc("#videoname", postVideoName),
+          saveImage: makeSaveFunc("#imagename", postImageName),
           saveBook: makeSaveFunc("#bookname", postBookName),
           search,
         };

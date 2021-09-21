@@ -1,0 +1,22 @@
+{
+  "name": "images-apis",
+  "version": "0.1.0",
+  "description": "A part of microservices project which serves images APIs.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "microservices",
+    "APIs",
+    "images"
+  ],
+  "author": "Ritesh Tailor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7",
+    "cors": "^2.8.5"
+  }
+}

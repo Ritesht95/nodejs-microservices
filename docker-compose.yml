@@ -12,6 +12,24 @@ services:
       - db
     environment:
       - MONGO_DB_URI=mongodb://db:27017/microservices
+  search:
+    build: "./search"
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db:27017/microservices
+
+  images:
+    build: "./images"
+    ports:
+      - "3003:3000"
+    depends_on:
+      - db
+    environment:
+      - MONGO_DB_URI=mongodb://db:27017/microservices
+
   db:
     image: mongo
     ports:
@@ -26,3 +44,5 @@ services:
     depends_on:
       - web
       - books
+      - search
+      - images
