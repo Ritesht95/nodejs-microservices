@@ -1,5 +1,5 @@
 const express = require("express");
-const Book = require("./models/books_model");
+const Book = require("./models/books");
 const app = express();
 const bodyParser = require("body-parser");
 
@@ -15,8 +15,11 @@ app.get("/api/v1/books", async (req, res) => {
 });
 
 app.post("/api/v1/books", async (req, res) => {
+  console.log("new book2222: -----------------------------");
   const book = new Book({ name: req.body.name });
   const savedBook = await book.save();
+  console.log("new book: -----------------------------");
+  console.log(savedBook);
   res.json(savedBook);
 });
 
