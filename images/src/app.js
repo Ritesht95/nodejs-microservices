@@ -15,10 +15,8 @@ app.get("/api/v1/images", async (req, res) => {
 });
 
 app.post("/api/v1/images", async (req, res) => {
-  console.log("new image2222: -----------------------------");
   const image = new Image({ name: req.body.name });
   const savedImage = await image.save();
-  console.log("new image: -----------------------------");
   console.log(savedImage);
   res.json(savedImage);
 });
